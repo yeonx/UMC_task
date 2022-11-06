@@ -1,6 +1,6 @@
 package com.umc.week6.post.domain;
 
-import com.umc.week6.common.domain.BaseTimeEntity;
+import com.umc.week6.common.BaseTimeEntity;
 import lombok.*;
 
 import javax.persistence.*;
