@@ -36,4 +36,9 @@ public class PostService {
                 new NotFoundException(POST_NOT_FOUND));
         post.update(postUpdateDto.getTitle(),postUpdateDto.getContent());
     }
+
+    @Transactional
+    public void delete(long postId){
+        postRepository.deleteById(postId);
+    }
 }
