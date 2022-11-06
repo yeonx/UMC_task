@@ -6,7 +6,6 @@ import com.umc.week6.post.repository.PostRepository;
 import com.umc.week6.post.sevice.dto.PostCreateDto;
 import com.umc.week6.post.sevice.dto.PostUpdateDto;
 import lombok.RequiredArgsConstructor;
-import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
