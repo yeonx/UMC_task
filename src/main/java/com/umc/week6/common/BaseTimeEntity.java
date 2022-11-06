@@ -1,4 +1,4 @@
-package com.umc.week6.common.domain;
+package com.umc.week6.common;
 
 import lombok.Getter;
 import org.springframework.data.annotation.CreatedDate;
