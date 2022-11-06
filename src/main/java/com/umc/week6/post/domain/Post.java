@@ -4,6 +4,7 @@ import com.umc.week6.common.BaseTimeEntity;
 import lombok.*;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
@@ -27,10 +28,13 @@ public class Post extends BaseTimeEntity {
                    String content){
         this.title = title;
         this.content = content;
+        this.createdDate = LocalDateTime.now();
+        this.modifiedDate = LocalDateTime.now();
     }
 
     public void update(String title, String content){
         this.title = title;
         this.content = content;
+        this.modifiedDate = LocalDateTime.now();
     }
 }
