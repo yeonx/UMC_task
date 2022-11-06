@@ -2,6 +2,7 @@ package com.umc.week6.post.controller;
 
 import com.umc.week6.post.sevice.PostService;
 import com.umc.week6.post.sevice.dto.PostCreateDto;
+import com.umc.week6.post.sevice.dto.PostDetailDto;
 import com.umc.week6.post.sevice.dto.PostUpdateDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -27,4 +28,10 @@ public class PostController {
     public void deletePost(@PathVariable("postId") long postId){
         postService.delete(postId);
     }
+
+    @GetMapping("/{postId}")
+    public PostDetailDto getPostDetail(@PathVariable("postId") long postId){
+        return postService.getPostDetail(postId);
+    }
+
 }

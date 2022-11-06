@@ -44,7 +44,7 @@ public class PostService {
     }
 
     @Transactional(readOnly = true)
-    public PostDetailDto makePostDetail(long postId) {
+    public PostDetailDto getPostDetail(long postId) {
         Optional<Post> checkPost = postRepository.findById(postId);
         Post post = checkPost.orElseThrow(() ->
                 new NotFoundException(POST_NOT_FOUND));
