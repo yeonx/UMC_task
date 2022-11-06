@@ -4,6 +4,7 @@ import com.umc.week6.exception.NotFoundException;
 import com.umc.week6.post.domain.Post;
 import com.umc.week6.post.repository.PostRepository;
 import com.umc.week6.post.sevice.dto.PostCreateDto;
+import com.umc.week6.post.sevice.dto.PostDetailDto;
 import com.umc.week6.post.sevice.dto.PostUpdateDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -40,5 +41,13 @@ public class PostService {
     @Transactional
     public void delete(long postId){
         postRepository.deleteById(postId);
+    }
+
+    @Transactional(readOnly = true)
+    public PostDetailDto makePostDetail(long postId) {
+        Optional<Post> checkPost = postRepository.findById(postId);
+        Post post = checkPost.orElseThrow(() ->
+                new NotFoundException(POST_NOT_FOUND));
+       return new PostDetailDto(post);
     }
 }
