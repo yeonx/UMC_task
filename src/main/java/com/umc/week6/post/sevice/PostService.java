@@ -10,6 +10,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
 import java.util.Optional;
 
 import static com.umc.week6.exception.ErrorCode.POST_NOT_FOUND;
@@ -49,5 +50,10 @@ public class PostService {
         Post post = checkPost.orElseThrow(() ->
                 new NotFoundException(POST_NOT_FOUND));
        return new PostDetailDto(post);
+    }
+
+    @Transactional(readOnly = true)
+    public List<Post> getPost() {
+        return postRepository.findAll();
     }
 }
