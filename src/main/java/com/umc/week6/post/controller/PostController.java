@@ -1,9 +1,9 @@
 package com.umc.week6.post.controller;
 
 import com.umc.week6.post.sevice.PostService;
-import com.umc.week6.post.sevice.dto.PostCreateDto;
-import com.umc.week6.post.sevice.dto.PostDetailDto;
-import com.umc.week6.post.sevice.dto.PostUpdateDto;
+import com.umc.week6.post.dto.PostCreateDto;
+import com.umc.week6.post.dto.PostDetailDto;
+import com.umc.week6.post.dto.PostUpdateDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 

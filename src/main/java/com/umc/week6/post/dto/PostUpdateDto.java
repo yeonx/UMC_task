@@ -1,4 +1,4 @@
-package com.umc.week6.post.sevice.dto;
+package com.umc.week6.post.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
