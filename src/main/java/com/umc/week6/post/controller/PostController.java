@@ -6,6 +6,7 @@ import com.umc.week6.post.dto.PostCreateDto;
 import com.umc.week6.post.dto.PostDetailDto;
 import com.umc.week6.post.dto.PostUpdateDto;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -38,7 +39,7 @@ public class PostController {
     }
 
     @GetMapping("")
-    public List<Post> getPost(){
-        return postService.getPost();
+    public List<Post> getPost(Pageable pageable){
+        return postService.getPost(pageable);
     }
 }

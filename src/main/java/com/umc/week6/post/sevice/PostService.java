@@ -7,6 +7,7 @@ import com.umc.week6.post.dto.PostCreateDto;
 import com.umc.week6.post.dto.PostDetailDto;
 import com.umc.week6.post.dto.PostUpdateDto;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -53,7 +54,7 @@ public class PostService {
     }
 
     @Transactional(readOnly = true)
-    public List<Post> getPost() {
-        return postRepository.findAll();
+    public List<Post> getPost(Pageable pageable) {
+        return (List<Post>) postRepository.findByIdDesc(pageable);
     }
 }
